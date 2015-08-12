@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sephora account</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/sephorastyle.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+       .form{
+          position:absolute;
+          top:50px;
+          left:350px;
+          text-align: center;
+          color:black;
+          width:50%;
+          height:100%;
+          margin:0 auto;
+          background: white;
+          opacity:0;
+          z-index: 50;
+          display: none;
+          border: solid #FF33CC;
+       }
+
+       h2{
+          text-align:  center;  
+
+       }
+       .register{background-color: black;
+        color: red;
+        float: right;
+        margin-right: 300px;
+      }
+
+     
+       .close{
+          float: right;
+          top: 0;
+          margin-right: 15px;
+          cursor: pointer;
+       }
+       .textbox{
+        display: none;
+        border: black 20px;
+        font-size: 15px;
+        text-align: center;
+
+
+
+       }
+       .lightbox{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 20px;
+        color: #FF00FF;
+       }
+       .accountpic{
+        margin-left: 160px;
+        margin-top: 1px;
+       
+        }
+        body{
+          background-color: #CCFFFF;
+        }
+
+
+     </style>
+
+</head>
+<body>
+	<div id="header">
+		<div  class="topleft">
+			<ul>
+			<li><a href="home">MAKEUP</a>
+				<ul> 
+          <li> <a href="">Link1</a></li>
+          <li> <a href="">Link2</a></li>
+          <li> <a href="">Link3</a></li>
+         </ul>
+				</li>
+				<li><a href="register">ACCOUNT</a><ul> 
+            <li> <a href="">Link1</a></li>
+            <li> <a href="">Link2</a></li>
+            <li> <a href="">Link3</a></li>
+          </ul>
+				</li>
+				<li><a href="beauty">BEAUTY INSIDER</a>
+					<ul> 
+            <li> <a href="">Link1</a></li>
+            <li> <a href="">Link2</a></li>
+            <li> <a href="">Link3</a></li>
+          </ul>
+				</li>
+				<li><a href="free">3 FREE SAMPLES</a>
+					<ul> 
+            <li> <a href="">Link1</a></li>
+            <li> <a href="">Link2</a></li>
+            <li> <a href="">Link3</a></li>
+          </ul>
+				</li>
+			</ul>
+		</div>
+		<div class="topright">
+				<ul >
+					<li><a href="#">STORE</a></li>
+					<li><a href="#">BASKET</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div>
+            <img  id="logo" src="images/homepage_sephoralogo_040915_image.png" >
+        </div>
+
+      <div class="lightbox"><u><a href="#">SIGN UP NOW</a></u></div>
+		
+    
+     <img src="http://ysa-creation.com/wp-content/uploads/2013/01/stilife.jpg" class="accountpic" width="80%" height="80%">
+
+
+      <div class="form"><fieldset>
+            
+        <div class="close">Close</div>
+            <p><b>REGISTER WITH SEPHORA</b></p>
+      <p style="color:red">All fields required.</p>
+      <label>First Name:<br />
+      <input type="text" name="name" size="25"/></label>
+      <label>Last Name:<br />
+      <input type="text" name="name" size="25"/></label><br />
+      <label>E-mail/User Name:<br />
+      <input type="text" name="E-mail" size="54"/></label><br />
+
+      <label>Password:<br />
+      <input type="text" name="Phone" size="25"/></label>
+      <label>Confirm Password:<br />
+      <input type="text" name="Phone" size="25" /></label><br />
+      <label>Full Address:<br />
+      <input type="text" name="Address" size="54"/></label><br />
+      <p>
+        <br />
+        
+        <input type="radio" name="consent" value="yes" />Yes, I would like recieve e-mails and notifications from Sephora
+      </p>
+      <label>Security question
+        <select name="question">
+          <option value="grandma">Your grandmothers first name?</option>
+          <option value="maiden">Your maiden name?</option>
+          <option value="born">In what city were you born?</option>  
+        </select></label>
+          <label>Answer:
+          <input type="text" name="answer" size="15"/></label><br /> 
+          <label>SECURITY CHECK</label>
+    <p>Security is priority for Sephora. Please enter the characters below to show you're an authentic user.</p>
+    <h4>ASD12j</h4>
+          <input type="text" name="authentic" size="15"/></label> <br /><br />
+        <button class="register">Register</button>
+        
+    </fieldset>
+</div>  
+      
+         <div class="textbox">  
+           
+          <p>THANK YOU FOR CREATING AN ACCOUNT WITH SEPHORA.<br /> YOUR USER NAME AND PASSWORD HAS BEEN SENT TO YOUR <a href="https://mail.google.com">EMAIL ACCOUNT.</a>
+            <br />
+
+          <a href="home"><img src="http://www.sephora.com/contentimages/homepage/050515/homepage_slideshow_newproduct_us_050515_image.jpg"></a>
+
+
+      
+        </div>
+        <div id="backtotop"><a href="#top" class="topOfPage">To The Top</a></div>  
+        
+      
+    <script type="text/javascript">
+          $(document).ready(function (){
+            $('.lightbox').click(function(){
+                var fieldset = $(this).attr('src');
+                console.log(fieldset)
+              $('.form').animate({'opacity':'1'}, 300, 'linear');
+              $('#displayForm').attr('p', fieldset);
+              $('.form').css ('display', 'block');
+              $('.textbox').css('display','none');
+    
+              });
+
+            $('.close').click(function(){
+              close_tab();
+            });
+            
+           
+            function close_tab(){
+              $('.form').css('display','none')
+            }
+        });
+
+    </script>
+     <script type="text/javascript">
+          $(document).ready(function (){
+            $('.register').click(function(){
+                var fieldset = $(this).attr('p');
+                console.log(fieldset)
+              $('.textbox').animate({'opacity':'1'}, 300, 'linear');
+              $('#displayTextbox').attr('p', fieldset);
+              $('.textbox').css ('display', 'block');
+              $('.form').css('display','none');
+              $('.accountpic').css('display','none');
+              $('.lightbox').css('display','none');
+              
+              });
+
+            $('.close').click(function(){
+              close_tab();
+            });
+            
+            
+            function close_tab(){
+              $('.textbox').css('display','none')
+            }
+        });
+    </script>
+
+
+
+	 <script>
+        $(document).ready(function(){
+          $('li').hover(function(){
+            $(this).find('ul>li').stop().fadeToggle(300);
+          });
+        });
+      </script>
+       <script type="text/javascript">
+         
+          $(document).ready(function (){
+            $('.register').click(function(){
+              
+            });
+          });
+
+
+      $(document).ready(function () {
+      $('#shout a').click(function () {
+          var to = $(this).attr('href');
+          $.scrollTo(to, 1200);
+          return false;
+      });
+      $('a.topOfPage').click(function () {
+          $.scrollTo(0, 1200);
+          return false;
+      });
+    
+    });
+    </script>
+</body>
+</html>
